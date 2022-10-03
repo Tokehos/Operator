@@ -2,17 +2,30 @@ public class Main {
 
     public static void main(String[] args) {
 
-
-        int persent;
+        int persent = 0;
         int balance = 100; // текущий баланс //
-        int enterMoney = 1990; // пополнение //
-        if (enterMoney < 1000) {
-            persent = 0;
+        int enterMoney = 1; // пополнение //
+        int bonus;
+        int total;
+
+        if (enterMoney <= 0) {
+            System.out.println("Не может быть отрицательной или нулевой!");
         } else {
-            persent = 1;
+            if (enterMoney < 1000) {
+                persent = 0;
+                bonus = enterMoney * persent / 100;
+                total = balance + enterMoney + bonus;
+                System.out.println("Бонусы = " + bonus);
+                System.out.println("Итоговый баланс = " + total);
+
+            } else {
+                persent = 1;
+                bonus = enterMoney * persent / 100;
+                total = balance + enterMoney + bonus;
+                System.out.println("Бонусы + " + bonus);
+                System.out.println("Итоговый баланс + " + total);
+            }
         }
-        int bonus = enterMoney * persent / 100; // бонус //
-        int total = balance + enterMoney + bonus; // баланс с учетом пополнения //
-        System.out.println(total);
+        System.out.println("Спасибо, что воспользовались услугами MaxPay!");
     }
 }
